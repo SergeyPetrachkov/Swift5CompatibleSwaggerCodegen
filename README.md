@@ -15,7 +15,7 @@ build_master:
     - echo $GIT_USERNAME
     - echo $PUSH_TOKEN
     - chmod +x ./scripts/swagger-codegen-cli.jar
-    - java -jar ./scripts/swagger-codegen-cli.jar generate -i ./path/to/swagger.json -l swift5
+    - java -jar ./scripts/swagger-codegen-cli.jar generate -i ./path/to/swagger.json -l swift4
     - (if [ -z "$(git status --porcelain)" ]; then echo "Nothing to commit"; else bundle exec fastlane release_api git_username:$GIT_USERNAME push_token:$PUSH_TOKEN; fi);
   only:
    - master
